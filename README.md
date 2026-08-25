@@ -1,8 +1,7 @@
 ```markdown
+
+
 # StyleHub & IronCore Platform 🚀
-
-<img width="1858" height="940" alt="stylehub-abdelrazzaq (2)" src="https://github.com/user-attachments/assets/dc290006-23b9-48d2-badc-d0c56ea02d40" />
-
 ---
 
 ## 🏛️ Executive Overview
@@ -10,6 +9,7 @@
 An enterprise-grade, high-concurrency multi-tenant ecosystem combining **StyleHub** (Salon Operations & Queue Management Engine) and **IronCore** (Fitness Facility & Membership Management Platform). Engineered with a **Zero-Trust security model**, strict database-level concurrency safeguards, and an optimized modular architecture designed to scale seamlessly under extreme traffic loads.
 
 ---
+<img width="1858" height="940" alt="stylehub-abdelrazzaq (2)" src="https://github.com/user-attachments/assets/dc290006-23b9-48d2-badc-d0c56ea02d40" />
 
 ## 🧩 Monorepo & System Architecture
 
