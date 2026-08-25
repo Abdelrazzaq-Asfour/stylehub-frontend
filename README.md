@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+```markdown
+# StyleHub & IronCore Platform 🚀
 
-## Getting Started
+<img width="1858" height="940" alt="stylehub-abdelrazzaq (2)" src="https://github.com/user-attachments/assets/dc290006-23b9-48d2-badc-d0c56ea02d40" />
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🏛️ Executive Overview
+
+An enterprise-grade, high-concurrency multi-tenant ecosystem combining **StyleHub** (Salon Operations & Queue Management Engine) and **IronCore** (Fitness Facility & Membership Management Platform). Engineered with a **Zero-Trust security model**, strict database-level concurrency safeguards, and an optimized modular architecture designed to scale seamlessly under extreme traffic loads.
+
+---
+
+## 🧩 Monorepo & System Architecture
+
+```text
+├── stylehub-frontend/               # Next.js App Router & Tailored Tailwind UI
+│   ├── app/                         # Hybrid rendering layout hierarchy & pages
+│   ├── components/                  # Reusable atomic UI components & matrices
+│   ├── services/                    # Unified API abstraction & mock fallback layers
+│   └── context/                     # Event-driven session state management
+│
+└── stylehub-backend / ironcore-db/  # Spring Boot 3 Core Services & Relational Schema
+    ├── config/                      # Security, JWT, and CORS configuration matrices
+    ├── controller/                  # RESTful endpoints handling zero-trust routing
+    ├── service/                     # Business logic and transactional execution engines
+    └── repository/                  # Spring Data JPA kernels with composite isolation
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚡ Core Technical Specifications
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Frontend Engine:** Built with **Next.js (App Router)** and **React**, leveraging custom hooks, dynamic route protection via `middleware.js`, and real-time state synchronization (`authChange` events).
+* **Backend Core:** Developed using **Spring Boot 3 (Java)** with stateless **JWT authentication**, Spring Security filters, global exception handling, and strict DTO input payload mapping.
+* **Database Optimization:** Hosted on **MySQL 8.0+ / InnoDB**, featuring kernel-level **Composite Indexing** (`idx_appt_concurrency_guard`) to completely neutralize double-booking race conditions and ensure transaction isolation (`Repeatable Read`).
+* **Design Pattern:** Implements an enterprise **Mock/Real Toggle Switch** architecture, allowing developers to switch seamlessly between live backend REST routes and local mock repositories without modifying UI components.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔐 Security & RBAC Implementation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Zero-Trust Access Control:** Enforces strict role isolation separating `SUPER_ADMIN`, `STAFF`, `COACH`, and `CUSTOMER` permissions across both web middleware and backend endpoints.
+* **Credential Protection:** Passwords securely hashed via industry-standard algorithms, complemented by token-based session caching and request header interceptors.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Node.js (v18+ recommended)
+* Java JDK 17+
+* MySQL Server 8.0+
+
+### Quick Setup
+
+1. **Clone the Repositories:**
+```bash
+git clone [https://github.com/your-username/stylehub-frontend.git](https://github.com/your-username/stylehub-frontend.git)
+git clone [https://github.com/your-username/stylehub-backend.git](https://github.com/your-username/stylehub-backend.git)
+
+```
+
+
+2. **Run Frontend Application:**
+```bash
+cd stylehub-frontend
+npm install
+npm run dev
+
+```
+
+
+3. **Configure & Run Backend:**
+* Import the provided SQL schemas (`pharmacare_db.sql` / `ironcore_db`) into your MySQL server.
+* Configure database credentials in `application.properties`.
+* Start the Spring Boot application via your IDE or terminal:
+```bash
+./mvnw spring-boot:run
+
+```
+
+
+
+
+
+---
+
+## 📄 License
+
+This project is proprietary and built as an enterprise engineering showcase. Unauthorized commercial duplication is strictly prohibited.
+
+```
+
+```
