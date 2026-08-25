@@ -8,7 +8,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { api } from "../../services/api";
+import { authService } from "../../services/api";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await api.post("/auth/login", formData);
+      const response = await authService.login(formData);
       
       // Store token safely and cache user info for instant navbar reflection
       if (response.data && response.data.token) {
@@ -112,8 +112,8 @@ export default function LoginPage() {
         <div className="mt-8 p-4 bg-indigo-950/30 border border-indigo-800/40 rounded-2xl text-xs text-gray-300 space-y-1.5">
           <p className="font-bold text-indigo-400 uppercase tracking-wider mb-1">Demo Accounts Note:</p>
           <p>• Admin: <span className="font-mono text-white">superadmin</span></p>
-          <p>• Staff: <span className="font-mono text-white">abdelrazzaq</span></p>
-          <p>• Client: <span className="font-mono text-white">sonya</span></p>
+          <p>• Staff: <span className="font-mono text-white">sarah_stylist</span></p>
+          <p>• Client: <span className="font-mono text-white">jane_doe</span></p>
           <p className="text-gray-400 pt-1">Password for all accounts: <span className="font-mono text-emerald-400 font-bold">123456</span></p>
         </div>
 

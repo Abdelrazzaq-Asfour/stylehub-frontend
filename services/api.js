@@ -153,3 +153,35 @@ export const appointmentApi = {
     return res.data;
   }
 };
+
+// ============================================================================
+// Authentication Services (Mock vs Real) - تمت إضافتها لحل المشكلة
+// ============================================================================
+export const authService = {
+  login: async (credentials) => {
+    if (USE_MOCK_DATA) {
+      const identifier = credentials.usernameOrEmail;
+      const user = mockUsers.find(u => u.username === identifier || u.email === identifier);
+      
+      if (!user || credentials.password !== "123456") {
+        throw new Error("Invalid username or password (Mock)");
+      }
+
+      return {
+        message: "Login successful (Mock)",
+        data: {
+          token: "mock-jwt-token-stylehub-999",
+          user: {
+            id: user.id,
+            username: user.username,
+            fullName: user.fullName,
+            email: user.email,
+            role: user.role
+          }
+        }
+      };
+    }
+    const res = await api.post("/auth/login", credentials);
+    return res;
+  }
+};
