@@ -112,7 +112,7 @@ export default function LoginPage() {
         <div className="mt-8 p-4 bg-indigo-950/30 border border-indigo-800/40 rounded-2xl text-xs text-gray-300 space-y-1.5">
           <p className="font-bold text-indigo-400 uppercase tracking-wider mb-1">Demo Accounts Note:</p>
           <p>• Admin: <span className="font-mono text-white">superadmin</span></p>
-          <p>• Staff: <span className="font-mono text-white">sarah_stylist</span></p>
+          <p>• Staff: <span className="font-mono text-white">david_spa</span></p>
           <p>• Client: <span className="font-mono text-white">jane_doe</span></p>
           <p className="text-gray-400 pt-1">Password for all accounts: <span className="font-mono text-emerald-400 font-bold">123456</span></p>
         </div>
